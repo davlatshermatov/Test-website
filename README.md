@@ -1,5 +1,7 @@
 # Marketing Reference
 
+**Live at <https://davlatshermatov.github.io/Test-website/>**
+
 A static, mobile-first reference site for marketers: strategy frameworks, a
 19-channel comparison, 43 metric formulas, six working calculators, copy-ready
 playbooks and a 153-term searchable glossary.
@@ -33,13 +35,24 @@ python3 -m http.server 8000
 
 ## Deploying
 
-It's plain static files, so anything will host it. For GitHub Pages: push the
-branch, then **Settings → Pages → Deploy from a branch**, pick the branch and
-the `/ (root)` folder. No workflow or build configuration needed.
+Already deployed. `.github/workflows/deploy-pages.yml` publishes to GitHub Pages
+on every push to `claude/marketing-info-website-35ijih`, which is this repo's
+default branch. There is no build step — the workflow uploads the repository
+root as-is.
 
-If you put it on a real domain, two things are worth adding that aren't here
-because they need a domain to be correct: a `sitemap.xml` (the `<loc>` values
-must be absolute URLs) and Open Graph / Twitter card tags for link previews.
+The workflow uses `actions/configure-pages` with `enablement: true`, so it
+created the Pages site itself on its first run. Nothing needs clicking in
+Settings.
+
+`sitemap.xml`, `robots.txt` and the Open Graph / Twitter tags are all built
+around the base URL `https://davlatshermatov.github.io/Test-website/`. **If you
+move this to a custom domain or rename the repo, those absolute URLs all need
+updating** — they're in the `<head>` of each page, in `sitemap.xml` and in
+`robots.txt`. `.nojekyll` is present so a branch-based Pages build would also
+serve the files untouched.
+
+The social card at `assets/og-image.png` is a 1200×630 render; regenerate it if
+the headline numbers change.
 
 ## How it's built
 
@@ -105,3 +118,5 @@ Checked before shipping rather than assumed:
 - Glossary: 153 terms, no duplicates, sorted, search and category filter
   exercised in a real browser.
 - Zero third-party requests and zero cookies across all seven pages.
+- Canonical, Open Graph and Twitter tags on every page, each with a unique
+  canonical URL; `sitemap.xml` parses as well-formed XML.
