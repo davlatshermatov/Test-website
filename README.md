@@ -35,21 +35,34 @@ python3 -m http.server 8000
 
 ## Deploying
 
-Already deployed. `.github/workflows/deploy-pages.yml` publishes to GitHub Pages
-on every push to `claude/marketing-info-website-35ijih`, which is this repo's
-default branch. There is no build step — the workflow uploads the repository
-root as-is.
+Served by GitHub Pages straight from this branch — no Actions, no build step.
 
-The workflow uses `actions/configure-pages` with `enablement: true`, so it
-created the Pages site itself on its first run. Nothing needs clicking in
-Settings.
+**Settings → Pages → Build and deployment:**
 
-`sitemap.xml`, `robots.txt` and the Open Graph / Twitter tags are all built
-around the base URL `https://davlatshermatov.github.io/Test-website/`. **If you
-move this to a custom domain or rename the repo, those absolute URLs all need
-updating** — they're in the `<head>` of each page, in `sitemap.xml` and in
-`robots.txt`. `.nojekyll` is present so a branch-based Pages build would also
-serve the files untouched.
+| Setting | Value |
+| --- | --- |
+| Source | Deploy from a branch |
+| Branch | `claude/marketing-info-website-35ijih` (the default branch) |
+| Folder | `/ (root)` |
+
+Every push to that branch republishes the site. `.nojekyll` is committed, so
+Pages skips the Jekyll step and serves the files exactly as they are in the
+repo.
+
+There is deliberately no deploy workflow. Creating a Pages site through the
+Actions token fails with `Resource not accessible by integration` — the token
+can deploy to an existing Pages site but cannot create one, which needs repo
+admin. Since the branch source needs no workflow at all, an earlier
+`configure-pages` workflow was removed rather than left failing on every push.
+
+### Absolute URLs
+
+`sitemap.xml`, `robots.txt` and the Open Graph / Twitter tags are built around
+the base URL `https://davlatshermatov.github.io/Test-website/`. This is the only
+part of the site tied to where it's hosted. **If you rename the repo or move to
+a custom domain, update all three places:** the `<head>` of each of the seven
+pages, `sitemap.xml`, and `robots.txt`. Everything else uses relative paths and
+will follow along on its own.
 
 The social card at `assets/og-image.png` is a 1200×630 render; regenerate it if
 the headline numbers change.
