@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Metrics &amp; Formulas — CAC, LTV, ROAS, NRR, CTOR | Marketing Reference</title>
+<meta name="description" content="Over 40 marketing metrics with their formulas, sensible target ranges and the way each one gets misread: CAC, LTV, ROAS, MER, payback period, churn, NRR, CTOR, share of search and more.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235b3df5'/><text x='16' y='22' font-size='16' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+<script>try{var t=localStorage.getItem('mr-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span> Marketing Reference</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="fundamentals.html">Fundamentals</a>
+      <a href="channels.html">Channels</a>
+      <a href="metrics.html" aria-current="page">Metrics</a>
+      <a href="calculators.html">Calculators</a>
+      <a href="playbooks.html">Playbooks</a>
+      <a href="glossary.html">Glossary</a>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Section 03</span>
+      <h1>Metrics &amp; formulas</h1>
+      <p class="lede">Every metric with its formula, a realistic range, and — more usefully — the specific way it lies to you.</p>
+    </div>
+  </div>
+
+  <div class="wrap section">
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#acquisition">Acquisition &amp; media</a></li>
+        <li><a href="#conversion">Conversion &amp; revenue</a></li>
+        <li><a href="#retention">Retention &amp; value</a></li>
+        <li><a href="#email">Email</a></li>
+        <li><a href="#seo">SEO &amp; content</a></li>
+        <li><a href="#brand">Brand &amp; satisfaction</a></li>
+        <li><a href="#benchmarks">Benchmark ranges</a></li>
+        <li><a href="#hygiene">Measurement hygiene</a></li>
+      </ul>
+    </nav>
+
+    <div class="callout">
+      <span class="callout-title">Before you optimise anything</span>
+      <p class="mb-0">A metric is only useful if you'd act differently at different values of it. Write down, in advance, what you'd do if the number were 20% better and 20% worse. If the answer is "nothing" in both directions, stop tracking it on your dashboard — you have a report, not a metric.</p>
+    </div>
+
+    <section id="acquisition">
+      <h2>Acquisition &amp; media efficiency</h2>
+
+      <div class="metric">
+        <h3>CPM — cost per mille</h3>
+        <p class="metric-sub">What it costs to show your ad 1,000 times</p>
+        <div class="formula">CPM = (Total spend ÷ Impressions) × 1,000</div>
+        <p class="small mb-0"><strong>Watch out:</strong> a low CPM usually means a low-quality placement. Compare CPM only within the same placement type, and prefer <em>viewable</em> CPM (vCPM) where you can get it — an impression nobody could see costs the same as one they could.</p>
+      </div>
+
+      <div class="metric">
+        <h3>CPC — cost per click</h3>
+        <div class="formula">CPC = Total spend ÷ Clicks</div>
+        <p class="small mb-0"><strong>Watch out:</strong> CPC is an input, not an outcome. Cutting CPC by chasing cheap traffic almost always raises CPA. The only CPC that matters is the one attached to traffic that converts.</p>
+      </div>
+
+      <div class="metric">
+        <h3>CTR — click-through rate</h3>
+        <div class="formula">CTR = (Clicks ÷ Impressions) × 100</div>
+        <p class="small mb-0"><strong>Watch out:</strong> the fastest way to raise CTR is to write a misleading hook, which raises bounce and lowers conversion. Judge CTR and conversion rate together, never CTR alone.</p>
+      </div>
+
+      <div class="metric">
+        <h3>CPA / CPL — cost per acquisition or lead</h3>
+        <div class="formula">CPA = Campaign spend ÷ Conversions</div>
+        <p class="small mb-0"><strong>Watch out:</strong> "conversion" must be defined identically across channels or the comparison is meaningless. A newsletter signup and a booked demo are not the same conversion, yet they are routinely averaged into one CPA.</p>
+      </div>
+
+      <div class="metric">
+        <h3>CAC — customer acquisition cost</h3>
+        <p class="metric-sub">The most argued-about number in marketing</p>
+        <div class="formula">CAC = Total sales &amp; marketing cost ÷ New customers acquired</div>
+        <p class="small">Three versions, and you should know which one is being quoted:</p>
+        <dl class="kv">
+          <div><dt>Paid CAC</dt><dd>Ad spend ÷ customers attributed to ads. Flattering; ignores salaries and organic.</dd></div>
+          <div><dt>Blended CAC</dt><dd>All marketing spend ÷ <em>all</em> new customers. Honest, hard to game, the one to report to a board.</dd></div>
+          <div><dt>Fully-loaded CAC</dt><dd>Adds salaries, tools, agency fees and commissions. The true cost of growth.</dd></div>
+        </dl>
+        <p class="small mt-2 mb-0"><strong>Watch out:</strong> blended CAC looks great when organic is carrying you, which hides a paid channel that has stopped working. Track both, and watch the <em>gap</em> between them over time.</p>
+      </div>
+
+      <div class="metric">
+        <h3>ROAS — return on ad spend</h3>
+        <div class="formula">ROAS = Revenue attributable to ads ÷ Ad spend</div>
+        <p class="small"><strong>Watch out:</strong> ROAS uses revenue, not profit. A 3× ROAS on a product with a 25% gross margin loses money on every order. Use <strong>break-even ROAS</strong> as the bar:</p>
+        <div class="formula">Break-even ROAS = 1 ÷ Gross margin %</div>
+        <p class="small mb-0">At a 40% margin, break-even ROAS is 2.5×. Anything under that is buying revenue at a loss — which is occasionally a deliberate strategy, and more often an accident.</p>
+      </div>
+
+      <div class="metric">
+        <h3>MER — marketing efficiency ratio</h3>
+        <p class="metric-sub">Also called blended ROAS</p>
+        <div class="formula">MER = Total revenue ÷ Total marketing spend</div>
+        <p class="small mb-0"><strong>Why it matters:</strong> MER is attribution-proof. It doesn't care which platform claims what — it compares everything you spent to everything you sold. It's blunt, and increasingly it's the number growth teams steer by.</p>
+      </div>
+
+      <div class="metric">
+        <h3>POAS — profit on ad spend</h3>
+        <div class="formula">POAS = Gross profit from ads ÷ Ad spend</div>
+        <p class="small mb-0">The version of ROAS that survives contact with a finance team. Essential where margins differ a lot by product — otherwise your ad algorithm happily optimises toward your worst-margin SKU.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Reach &amp; frequency</h3>
+        <div class="formula">Frequency = Impressions ÷ Reach</div>
+        <p class="small mb-0"><strong>Rule of thumb:</strong> effective frequency for a new message is usually a few exposures; beyond roughly 8–10 in a short window you're mostly buying irritation. If reach is flat and frequency is climbing, you've saturated the audience — widen it or refresh the creative.</p>
+      </div>
+    </section>
+
+    <section id="conversion">
+      <h2>Conversion &amp; revenue</h2>
+
+      <div class="metric">
+        <h3>CVR — conversion rate</h3>
+        <div class="formula">CVR = (Conversions ÷ Sessions or visitors) × 100</div>
+        <p class="small mb-0"><strong>Watch out:</strong> sessions and users give different denominators and therefore different rates. Pick one, document it, and never change it mid-comparison. Also segment by device — a blended rate hides a broken mobile checkout for months.</p>
+      </div>
+
+      <div class="metric">
+        <h3>AOV — average order value</h3>
+        <div class="formula">AOV = Total revenue ÷ Number of orders</div>
+        <p class="small mb-0"><strong>Watch out:</strong> the mean is dragged around by outliers. Check the median too. Raising AOV through bundles and thresholds ("free shipping over $50") is usually cheaper than raising traffic.</p>
+      </div>
+
+      <div class="metric">
+        <h3>RPV — revenue per visitor</h3>
+        <div class="formula">RPV = Total revenue ÷ Total visitors  &nbsp;(= CVR × AOV)</div>
+        <p class="small mb-0">The best single ecommerce headline metric, because it can't be gamed by improving one half at the expense of the other. A "winning" test that lifts conversion but sinks AOV shows up here immediately.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Cart &amp; checkout abandonment</h3>
+        <div class="formula">Cart abandonment % = (1 − Completed purchases ÷ Carts created) × 100</div>
+        <p class="small mb-0">Consistently high across the industry — roughly two-thirds to three-quarters of carts. The recoverable portion is usually lost to unexpected shipping costs, forced account creation, a clunky payment step, or missing payment options. Fix those before writing another abandonment email.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Lead-to-customer rate &amp; win rate</h3>
+        <div class="formula">Lead-to-customer % = (Customers ÷ Leads) × 100</div>
+        <div class="formula">Win rate % = (Deals won ÷ Deals closed) × 100</div>
+        <p class="small mb-0"><strong>Watch out:</strong> win rate is measured on <em>closed</em> deals, not on all opportunities — otherwise open deals suppress it artificially. A rising lead count with a falling lead-to-customer rate means marketing is buying volume at the expense of quality.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Pipeline coverage</h3>
+        <div class="formula">Coverage = Open pipeline value ÷ Revenue target for the period</div>
+        <p class="small mb-0">B2B teams commonly aim for 3–4× coverage. It's a planning tool, not a truth: coverage built from unqualified opportunities is a story told with big numbers.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Sales cycle length</h3>
+        <div class="formula">Cycle length = Total days from first touch to close ÷ Deals closed</div>
+        <p class="small mb-0">Use the median, not the mean — one nine-month enterprise deal distorts an average built from three-week deals. Cycle length is also the reason short-window ad attribution fails in B2B: the conversion arrives long after the tracking window closed.</p>
+      </div>
+    </section>
+
+    <section id="retention">
+      <h2>Retention &amp; customer value</h2>
+
+      <div class="metric">
+        <h3>Churn rate</h3>
+        <div class="formula">Customer churn % = (Customers lost in period ÷ Customers at start) × 100</div>
+        <div class="formula">Revenue churn % = (Revenue lost in period ÷ Revenue at start) × 100</div>
+        <p class="small mb-0"><strong>Watch out:</strong> customer churn and revenue churn diverge sharply when your small accounts leave and your large ones stay — or vice versa. Report both. Annual churn is <em>not</em> monthly churn × 12; compounding makes the real figure lower.</p>
+      </div>
+
+      <div class="metric">
+        <h3>NRR &amp; GRR — net and gross revenue retention</h3>
+        <div class="formula">NRR = (Starting revenue + expansion − contraction − churn) ÷ Starting revenue × 100</div>
+        <div class="formula">GRR = (Starting revenue − contraction − churn) ÷ Starting revenue × 100</div>
+        <p class="small mb-0">NRR above 100% means you'd grow even if you never acquired another customer. GRR strips out expansion and shows whether you're actually keeping people — a healthy NRR sitting on top of a poor GRR means a few big upgrades are masking a leaky base.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Repeat purchase rate &amp; purchase frequency</h3>
+        <div class="formula">Repeat rate % = (Customers with 2+ orders ÷ Total customers) × 100</div>
+        <div class="formula">Purchase frequency = Total orders ÷ Unique customers (in a period)</div>
+        <p class="small mb-0">For ecommerce, the second order is the hinge. The probability of a third order is far higher than the probability of a second — so concentrate lifecycle effort on getting people from one to two.</p>
+      </div>
+
+      <div class="metric">
+        <h3>LTV / CLV — customer lifetime value</h3>
+        <p class="metric-sub">Two formulas; use the second one</p>
+        <div class="formula">Simple:  LTV = AOV × Purchase frequency × Customer lifespan</div>
+        <div class="formula">Better:  LTV = (AOV × Frequency × Lifespan) × Gross margin %</div>
+        <div class="formula">Subscription:  LTV = (ARPA × Gross margin %) ÷ Churn rate</div>
+        <p class="small mb-0"><strong>Watch out:</strong> revenue-based LTV overstates value by exactly your cost of goods, and LTV is a <em>forecast</em> dressed as a fact. A young company projecting a five-year lifespan from four months of data is guessing. Where you can, use a 12-month realised value instead — it's smaller, less exciting, and actually true.</p>
+      </div>
+
+      <div class="metric">
+        <h3>LTV:CAC ratio</h3>
+        <div class="formula">Ratio = LTV ÷ CAC</div>
+        <p class="small">A rough reading, assuming margin-adjusted LTV and fully-loaded CAC:</p>
+        <p class="small mb-0">
+          <span class="pill pill-bad">Below 1:1</span> losing money per customer &nbsp;
+          <span class="pill pill-warn">1–3:1</span> thin; fine while learning, not while scaling &nbsp;
+          <span class="pill pill-ok">3:1+</span> healthy &nbsp;
+          <span class="pill pill-warn">Above 5:1</span> often means you're <em>under</em>-investing in growth
+        </p>
+      </div>
+
+      <div class="metric">
+        <h3>CAC payback period</h3>
+        <p class="metric-sub">The number that decides whether you run out of cash</p>
+        <div class="formula">Payback (months) = CAC ÷ (Monthly revenue per customer × Gross margin %)</div>
+        <p class="small mb-0">LTV:CAC tells you whether a customer is profitable eventually. Payback tells you how long your money is tied up getting there. A 5:1 ratio with a 24-month payback will starve a company that a 3:1 ratio with a 4-month payback would have funded comfortably.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Cohort retention</h3>
+        <p class="small">Not one number — a table. Group customers by the month they joined, then track what share remain in each following month.</p>
+        <p class="small mb-0"><strong>What you're looking for:</strong> does the curve <em>flatten</em>? A curve that flattens at 30% means you have a real, durable customer base. A curve that keeps sliding toward zero means you have a leaky bucket, and no amount of acquisition spend will fill it.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Quick ratio</h3>
+        <div class="formula">Quick ratio = (New + Expansion revenue) ÷ (Churned + Contraction revenue)</div>
+        <p class="small mb-0">Growth efficiency in one number. Above 4 is strong for an early SaaS business; near 1 means you're running to stand still.</p>
+      </div>
+    </section>
+
+    <section id="email">
+      <h2>Email metrics</h2>
+
+      <div class="metric">
+        <h3>The core rates</h3>
+        <div class="formula">Delivery rate = (Sent − Bounces) ÷ Sent × 100</div>
+        <div class="formula">Open rate = Unique opens ÷ Delivered × 100</div>
+        <div class="formula">CTR = Unique clicks ÷ Delivered × 100</div>
+        <div class="formula">CTOR = Unique clicks ÷ Unique opens × 100</div>
+        <p class="small mb-0"><strong>CTOR is the copy-and-offer metric</strong> — of the people who opened, how many were persuaded. Subject line problems show in open rate; body and offer problems show in CTOR. Keeping them separate tells you what to rewrite.</p>
+      </div>
+
+      <div class="metric">
+        <h3>List health</h3>
+        <div class="formula">Unsubscribe rate = Unsubscribes ÷ Delivered × 100</div>
+        <div class="formula">Spam complaint rate = Complaints ÷ Delivered × 100</div>
+        <div class="formula">List growth rate = (New subs − Unsubs − Bounces) ÷ Total list × 100</div>
+        <p class="small mb-0"><strong>Hard limit:</strong> major inbox providers expect bulk senders to keep spam complaints below roughly 0.3%, and treat 0.1% as the level to stay under. Cross it and your delivery collapses for every campaign, including the ones people wanted.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Revenue per recipient</h3>
+        <div class="formula">RPR = Revenue from campaign ÷ Emails delivered</div>
+        <p class="small mb-0">The metric that stops "send more" from looking like a strategy. Sending twice as often can raise total revenue while RPR falls and unsubscribes climb — you're harvesting the list faster, not growing it. RPR catches that; total revenue doesn't.</p>
+      </div>
+
+      <div class="callout callout-warn">
+        <span class="callout-title">Open rate has been unreliable since 2021</span>
+        <p class="mb-0">Apple's Mail Privacy Protection pre-loads tracking pixels, so a large share of recorded opens never involved a human. Treat open rate as a <em>relative</em> signal between similar sends only, and never compare across the 2021 boundary. Optimise clicks and revenue instead.</p>
+      </div>
+    </section>
+
+    <section id="seo">
+      <h2>SEO &amp; content metrics</h2>
+
+      <div class="metric">
+        <h3>Non-brand organic traffic</h3>
+        <p class="small mb-0">Total organic traffic is a vanity number — it rises whenever your brand gets popular for reasons unrelated to SEO. Split branded from non-branded queries in Search Console. <strong>Non-brand organic is the only figure that measures the SEO work itself.</strong></p>
+      </div>
+
+      <div class="metric">
+        <h3>Organic CTR by position</h3>
+        <div class="formula">Organic CTR = Clicks ÷ Impressions × 100 (per query or page)</div>
+        <p class="small mb-0">Click-through falls steeply with rank — position one earns a large multiple of position five, and results below the fold earn very little. Ranking 3rd with an unappealing title can lose to ranking 5th with a great one, so compare your CTR against the average for <em>your</em> position before assuming you need to rank higher.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Share of search</h3>
+        <div class="formula">Share of search = Your brand's search volume ÷ Total category brand search volume × 100</div>
+        <p class="small mb-0">One of the few brand measures you can track weekly and for free. It tends to move ahead of market share, which makes it a genuinely useful early indicator of whether brand investment is landing.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Referring domains</h3>
+        <p class="small mb-0">Count <em>unique linking domains</em>, not total backlinks — a thousand links from one site is one relationship. Relevance beats raw authority scores, and those scores are third-party inventions, not signals any search engine publishes.</p>
+      </div>
+
+      <div class="metric">
+        <h3>Content decay</h3>
+        <p class="small mb-0">Traffic to an individual page usually peaks and then declines as competitors update theirs. Audit quarterly: find pages down 20%+ year-on-year and refresh them. <strong>Updating an existing ranking page almost always returns more than writing a new one</strong>, and almost nobody budgets time for it.</p>
+      </div>
+    </section>
+
+    <section id="brand">
+      <h2>Brand &amp; satisfaction</h2>
+
+      <div class="metric">
+        <h3>Awareness</h3>
+        <dl class="kv">
+          <div><dt>Unaided</dt><dd>"Name any brands in this category." Hard to earn, strongly linked to market share.</dd></div>
+          <div><dt>Aided</dt><dd>"Which of these have you heard of?" Easier, inflates quickly, less predictive.</dd></div>
+          <div><dt>Top of mind</dt><dd>The first brand named unprompted. The most valuable position in the category.</dd></div>
+        </dl>
+      </div>
+
+      <div class="metric">
+        <h3>Share of voice</h3>
+        <div class="formula">SOV = Your brand's presence ÷ Total category presence × 100</div>
+        <p class="small mb-0">The related finding from advertising research: when share of voice exceeds share of market, brands tend to grow over time, and the reverse tends to shrink them. The gap between the two is called excess share of voice.</p>
+      </div>
+
+      <div class="metric">
+        <h3>NPS — net promoter score</h3>
+        <div class="formula">NPS = % Promoters (9–10) − % Detractors (0–6)</div>
+        <p class="small mb-0"><strong>Watch out:</strong> NPS throws away the 7s and 8s, is heavily skewed by who you ask and when, and varies enormously by culture and category. It's fine as an internal trend line on a fixed methodology; it's nearly meaningless as a cross-company comparison — and it becomes actively harmful the moment someone's bonus depends on it.</p>
+      </div>
+
+      <div class="metric">
+        <h3>CSAT &amp; CES</h3>
+        <div class="formula">CSAT = Satisfied responses ÷ Total responses × 100</div>
+        <p class="small mb-0"><strong>CSAT</strong> measures a specific interaction. <strong>CES</strong> (customer effort score) asks how easy something was — and effort predicts churn better than satisfaction does, because people leave friction more reliably than they leave mild dissatisfaction.</p>
+      </div>
+    </section>
+
+    <section id="benchmarks">
+      <h2>Benchmark ranges</h2>
+      <div class="callout callout-warn">
+        <span class="callout-title">How to use this table</span>
+        <p class="mb-0">These are wide, directional ranges from publicly reported industry data. They exist so you can tell a plausible number from an implausible one. If you sit outside a range, check your measurement definition first — differing definitions explain more gaps than performance does.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Metric</th><th scope="col">Context</th><th scope="col">Typical range</th><th scope="col">Note</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Ecommerce conversion rate</th><td>Sitewide, all traffic</td><td class="num">1% – 4%</td><td>Desktop usually converts well above mobile; paid brand traffic above cold traffic</td></tr>
+            <tr><th scope="row">B2B site → lead rate</th><td>Marketing site</td><td class="num">1% – 5%</td><td>Depends almost entirely on how much you ask for in the form</td></tr>
+            <tr><th scope="row">Lead → customer</th><td>B2B, all lead types</td><td class="num">2% – 15%</td><td>Swings hugely by lead source; content downloads sit at the bottom, demo requests at the top</td></tr>
+            <tr><th scope="row">Email open rate</th><td>Permission-based list</td><td class="num">20% – 45%</td><td>Inflated by privacy pre-fetching since 2021; directional only</td></tr>
+            <tr><th scope="row">Email click rate</th><td>Permission-based list</td><td class="num">1% – 5%</td><td>Automated flows run several times higher than broadcast campaigns</td></tr>
+            <tr><th scope="row">Email unsubscribe rate</th><td>Per campaign</td><td class="num">Under 0.5%</td><td>A sustained spike usually means frequency, not content</td></tr>
+            <tr><th scope="row">Cart abandonment</th><td>Ecommerce</td><td class="num">65% – 80%</td><td>Remarkably stable across years and categories</td></tr>
+            <tr><th scope="row">Monthly churn</th><td>SMB SaaS</td><td class="num">3% – 7%</td><td>Enterprise SaaS typically under 1%; consumer apps far higher</td></tr>
+            <tr><th scope="row">Net revenue retention</th><td>B2B SaaS</td><td class="num">90% – 120%</td><td>Above 110% is considered strong; requires a real expansion motion</td></tr>
+            <tr><th scope="row">Paid search CTR</th><td>Branded terms</td><td class="num">10% – 30%+</td><td>Non-brand terms typically sit in the low single digits</td></tr>
+            <tr><th scope="row">Display CTR</th><td>Standard banners</td><td class="num">0.05% – 0.5%</td><td>Anything much higher usually indicates accidental clicks or fraud</td></tr>
+            <tr><th scope="row">Organic CTR</th><td>Google position 1</td><td class="num">~25% – 40%</td><td>Falls sharply by position and drops further where AI or featured answers appear</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-hint mobile-only">Swipe the table sideways to see all columns.</p>
+    </section>
+
+    <section id="hygiene">
+      <h2>Measurement hygiene</h2>
+      <p>Most bad marketing decisions come from clean-looking numbers that were never comparable in the first place.</p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Six rules</h3>
+          <ol class="small mb-0">
+            <li><strong>Write the definition down.</strong> "Active user" means nothing until someone specifies the window and the action.</li>
+            <li><strong>Never change a definition mid-comparison</strong> without restating history. Silent redefinitions destroy trust in the whole dashboard.</li>
+            <li><strong>Segment before you conclude.</strong> A flat average almost always hides one segment improving and another collapsing.</li>
+            <li><strong>Check the denominator.</strong> Most "conversion rate dropped" panics are traffic-mix changes.</li>
+            <li><strong>Beware small numbers.</strong> Going from 2 to 3 sales is "+50% growth" and also nothing.</li>
+            <li><strong>Pair every efficiency metric with a volume metric.</strong> CPA improves beautifully if you just stop spending.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Simpson's paradox, in one example</h3>
+          <p class="small">Campaign A converts better than B on mobile. A also converts better than B on desktop. Yet B has the higher overall conversion rate.</p>
+          <p class="small mb-0">This is not an error — it happens whenever the two campaigns have different device mixes. It's the single most common way an aggregate number points in the opposite direction to the truth, and the reason "always segment" is the most valuable habit on this page.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-bad">
+        <span class="callout-title">Goodhart's law applies to every metric here</span>
+        <p class="mb-0">"When a measure becomes a target, it ceases to be a good measure." Tie a bonus to MQLs and you will get MQLs — of steadily declining quality. The defence is to pair every target with a counter-metric that gets worse if someone games it: MQLs with lead-to-customer rate, CPA with volume, open rate with revenue per recipient.</p>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="calculators.html">Next: run the numbers →</a>
+      <a class="btn btn-ghost" href="glossary.html">Look up a term</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="fundamentals.html">Fundamentals</a></li>
+          <li><a href="channels.html">Channels</a></li>
+          <li><a href="metrics.html">Metrics &amp; formulas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Do</h4>
+        <ul>
+          <li><a href="calculators.html">Calculators</a></li>
+          <li><a href="playbooks.html">Playbooks &amp; checklists</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="calculators.html#unit-economics">LTV:CAC calculator</a></li>
+          <li><a href="calculators.html#ab-test">A/B test significance</a></li>
+          <li><a href="metrics.html#acquisition">CAC &amp; ROAS formulas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0">Marketing Reference · an open, static reference site. Benchmark ranges are directional figures compiled from publicly reported industry data and should be validated against your own analytics before any decision rests on them. Nothing here is financial advice. © <span data-year>2026</span>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
