@@ -409,7 +409,7 @@ section[id] { scroll-margin-top: 5.5rem; }
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 148px), 1fr)); }
 
 .card {
   background: var(--surface);
@@ -476,12 +476,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: .93rem;
-  min-width: 520px;
+  min-width: 560px;
 }
 
+/* Tables with five or more columns need more room than the default, or every
+   cell wraps to four or five lines on a phone. Swiping beats stacked text. */
+.table-wrap.is-wide table { min-width: 900px; }
+
 thead th {
-  position: sticky;
-  top: 0;
   text-align: left;
   font-size: .76rem;
   font-weight: 700;
@@ -751,8 +753,8 @@ dl.kv dd { flex: 1 1 12rem; margin: 0; font-size: .94rem; }
   font: inherit;
   font-size: .85rem;
   font-weight: 570;
-  min-height: 38px;
-  padding: 0 .8rem;
+  min-height: 40px;
+  padding: 0 .9rem;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -837,9 +839,11 @@ dl.kv dd { flex: 1 1 12rem; margin: 0; font-size: .94rem; }
 }
 .toc li { margin: 0; }
 .toc a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
   font-size: .89rem;
-  padding: .35rem .6rem;
+  padding: .35rem .7rem;
   border-radius: 999px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -847,6 +851,18 @@ dl.kv dd { flex: 1 1 12rem; margin: 0; font-size: .94rem; }
   text-decoration: none;
 }
 .toc a:hover { border-color: var(--brand); color: var(--brand); }
+
+/* Touch devices get targets that clear the 44px guidance. */
+@media (max-width: 900px) {
+  .toc ul { gap: .5rem; }
+  .toc a { min-height: 44px; padding-inline: .9rem; }
+  .site-footer li { margin-bottom: 0; }
+  .site-footer li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+}
 
 /* --- 15. Footer ----------------------------------------------------------- */
 

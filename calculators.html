@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Calculators — LTV:CAC, break-even ROAS, A/B significance | Marketing Reference</title>
+<meta name="description" content="Six free marketing calculators that run entirely in your browser: unit economics and LTV:CAC, break-even ROAS, funnel modelling, A/B test significance, sample size planning and email campaign value.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235b3df5'/><text x='16' y='22' font-size='16' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+<script>try{var t=localStorage.getItem('mr-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span> Marketing Reference</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="fundamentals.html">Fundamentals</a>
+      <a href="channels.html">Channels</a>
+      <a href="metrics.html">Metrics</a>
+      <a href="calculators.html" aria-current="page">Calculators</a>
+      <a href="playbooks.html">Playbooks</a>
+      <a href="glossary.html">Glossary</a>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Section 04</span>
+      <h1>Calculators</h1>
+      <p class="lede">Six working models, pre-filled with realistic numbers so you can see what they do before typing anything. Everything runs in your browser — nothing you enter is sent, stored or logged anywhere.</p>
+    </div>
+  </div>
+
+  <div class="wrap section">
+
+    <nav class="toc" aria-label="On this page">
+      <h2>Jump to</h2>
+      <ul>
+        <li><a href="#unit-economics">Unit economics &amp; LTV:CAC</a></li>
+        <li><a href="#break-even-roas">Break-even ROAS</a></li>
+        <li><a href="#funnel-model">Funnel model</a></li>
+        <li><a href="#ab-test">A/B test significance</a></li>
+        <li><a href="#sample-size">Sample size planner</a></li>
+        <li><a href="#email-value">Email campaign value</a></li>
+      </ul>
+    </nav>
+
+    <div class="field" style="max-width: 220px; margin-bottom: 2rem;">
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD">USD — US dollar</option>
+        <option value="EUR">EUR — Euro</option>
+        <option value="GBP">GBP — Pound sterling</option>
+        <option value="JPY">JPY — Japanese yen</option>
+        <option value="INR">INR — Indian rupee</option>
+        <option value="AUD">AUD — Australian dollar</option>
+        <option value="CAD">CAD — Canadian dollar</option>
+        <option value="BRL">BRL — Brazilian real</option>
+        <option value="AED">AED — UAE dirham</option>
+        <option value="UZS">UZS — Uzbekistani soum</option>
+      </select>
+      <span class="hint">Changes the display format of every calculator below.</span>
+    </div>
+
+    <!-- 1 -->
+    <section class="calc" id="unit-economics">
+      <h3>1 · Unit economics &amp; LTV:CAC</h3>
+      <p class="calc-intro">The one calculation that decides whether growth makes you richer or poorer. It answers two separate questions: <em>is a customer worth more than they cost?</em> and <em>how long is your cash tied up finding out?</em></p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="ue-spend">Monthly sales &amp; marketing spend</label>
+          <input type="number" id="ue-spend" value="25000" min="0" step="any" inputmode="decimal">
+          <span class="hint">Include salaries, tools and agency fees</span>
+        </div>
+        <div class="field">
+          <label for="ue-customers">New customers per month</label>
+          <input type="number" id="ue-customers" value="100" min="0" step="any" inputmode="decimal">
+          <span class="hint">All new customers, not just attributed ones</span>
+        </div>
+        <div class="field">
+          <label for="ue-revenue">Revenue per customer per month</label>
+          <input type="number" id="ue-revenue" value="60" min="0" step="any" inputmode="decimal">
+          <span class="hint">For one-off sales, spread it over the lifespan</span>
+        </div>
+        <div class="field">
+          <label for="ue-margin">Gross margin (%)</label>
+          <input type="number" id="ue-margin" value="70" min="0" max="100" step="any" inputmode="decimal">
+          <span class="hint">After cost of goods and delivery</span>
+        </div>
+        <div class="field">
+          <label for="ue-lifespan">Average customer lifespan (months)</label>
+          <input type="number" id="ue-lifespan" value="20" min="0" step="any" inputmode="decimal">
+          <span class="hint">= 1 ÷ monthly churn. 5% churn → 20 months</span>
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">CAC</span><span class="r-value" id="ue-out-cac">—</span></div>
+        <div class="result"><span class="r-label">Gross profit / month</span><span class="r-value" id="ue-out-profit">—</span></div>
+        <div class="result"><span class="r-label">LTV (margin-adjusted)</span><span class="r-value" id="ue-out-ltv">—</span></div>
+        <div class="result"><span class="r-label">LTV : CAC</span><span class="r-value" id="ue-out-ratio">—</span></div>
+        <div class="result"><span class="r-label">CAC payback</span><span class="r-value" id="ue-out-payback">—</span></div>
+        <div class="verdict" id="ue-verdict"></div>
+      </div>
+
+      <div class="callout mt-2">
+        <span class="callout-title">Why lifespan is the number to be suspicious of</span>
+        <p class="mb-0">Every other input here is something you can look up. Lifespan is a <em>projection</em>, and it is where optimism enters the model. If your company is 8 months old, you cannot know your 20-month lifespan — you assumed it. Try halving it and see whether the verdict survives. If it doesn't, your business case rests on a guess.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="calc" id="break-even-roas">
+      <h3>2 · Break-even ROAS</h3>
+      <p class="calc-intro">ROAS is measured in revenue, but you bank profit. This works out the ROAS you need just to break even — and the most you can afford to pay for an order.</p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="be-aov">Average order value</label>
+          <input type="number" id="be-aov" value="65" min="0" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="be-cogs">Cost of goods per order</label>
+          <input type="number" id="be-cogs" value="26" min="0" step="any" inputmode="decimal">
+          <span class="hint">What the product itself costs you</span>
+        </div>
+        <div class="field">
+          <label for="be-variable">Other variable cost per order</label>
+          <input type="number" id="be-variable" value="9" min="0" step="any" inputmode="decimal">
+          <span class="hint">Shipping, payment fees, packaging, returns</span>
+        </div>
+        <div class="field">
+          <label for="be-spend">Ad spend (period)</label>
+          <input type="number" id="be-spend" value="10000" min="0" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="be-revenue">Revenue attributed to ads</label>
+          <input type="number" id="be-revenue" value="28000" min="0" step="any" inputmode="decimal">
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">Contribution / order</span><span class="r-value" id="be-out-contribution">—</span></div>
+        <div class="result"><span class="r-label">Contribution margin</span><span class="r-value" id="be-out-margin">—</span></div>
+        <div class="result"><span class="r-label">Break-even ROAS</span><span class="r-value" id="be-out-breakeven">—</span></div>
+        <div class="result"><span class="r-label">Your ROAS</span><span class="r-value" id="be-out-actual">—</span></div>
+        <div class="result"><span class="r-label">Max cost per order</span><span class="r-value" id="be-out-maxcpa">—</span></div>
+        <div class="result"><span class="r-label">Profit after ad spend</span><span class="r-value" id="be-out-profit">—</span></div>
+        <div class="verdict" id="be-verdict"></div>
+      </div>
+
+      <div class="callout mt-2">
+        <span class="callout-title">The shortcut worth memorising</span>
+        <p class="mb-0"><strong>Break-even ROAS = 1 ÷ contribution margin.</strong> At a 50% margin you need 2×. At 33% you need 3×. At 25% you need 4×. This is why "we hit a 3× ROAS" means nothing until someone says what the margin is — the same 3× is excellent for a software company and a slow bleed for a reseller.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="calc" id="funnel-model">
+      <h3>3 · Funnel model</h3>
+      <p class="calc-intro">Model traffic through to revenue, then see what a realistic improvement is actually worth. Read the labels as visitor → cart → checkout → purchase if you're in ecommerce.</p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="fn-visitors">Monthly visitors</label>
+          <input type="number" id="fn-visitors" value="25000" min="0" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="fn-step1">Visitor → lead (%)</label>
+          <input type="number" id="fn-step1" value="3" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="fn-step2">Lead → qualified (%)</label>
+          <input type="number" id="fn-step2" value="35" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="fn-step3">Qualified → customer (%)</label>
+          <input type="number" id="fn-step3" value="22" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="fn-aov">Average order value</label>
+          <input type="number" id="fn-aov" value="850" min="0" step="any" inputmode="decimal">
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">Leads</span><span class="r-value" id="fn-out-leads">—</span></div>
+        <div class="result"><span class="r-label">Qualified</span><span class="r-value" id="fn-out-qualified">—</span></div>
+        <div class="result"><span class="r-label">Customers</span><span class="r-value" id="fn-out-customers">—</span></div>
+        <div class="result"><span class="r-label">Revenue / month</span><span class="r-value" id="fn-out-revenue">—</span></div>
+        <div class="result"><span class="r-label">Visitor → customer</span><span class="r-value" id="fn-out-overall">—</span></div>
+        <div class="result"><span class="r-label">Revenue per visitor</span><span class="r-value" id="fn-out-rpv">—</span></div>
+        <div class="verdict" id="fn-verdict"></div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="calc" id="ab-test">
+      <h3>4 · A/B test significance</h3>
+      <p class="calc-intro">A two-proportion z-test — the standard check for whether a difference in conversion rates is real or noise. Enter the totals for each variant at the end of the test.</p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="ab-visitors-a">Variant A — visitors</label>
+          <input type="number" id="ab-visitors-a" value="8400" min="0" step="1" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="ab-conv-a">Variant A — conversions</label>
+          <input type="number" id="ab-conv-a" value="210" min="0" step="1" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="ab-visitors-b">Variant B — visitors</label>
+          <input type="number" id="ab-visitors-b" value="8400" min="0" step="1" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="ab-conv-b">Variant B — conversions</label>
+          <input type="number" id="ab-conv-b" value="255" min="0" step="1" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="ab-confidence">Confidence threshold</label>
+          <select id="ab-confidence">
+            <option value="90">90%</option>
+            <option value="95" selected>95%</option>
+            <option value="99">99%</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">Rate A</span><span class="r-value" id="ab-out-rate-a">—</span></div>
+        <div class="result"><span class="r-label">Rate B</span><span class="r-value" id="ab-out-rate-b">—</span></div>
+        <div class="result"><span class="r-label">Relative lift</span><span class="r-value" id="ab-out-lift">—</span></div>
+        <div class="result"><span class="r-label">p-value</span><span class="r-value" id="ab-out-pvalue">—</span></div>
+        <div class="result"><span class="r-label">Observed confidence</span><span class="r-value" id="ab-out-confidence">—</span></div>
+        <div class="verdict" id="ab-verdict"></div>
+      </div>
+
+      <div class="callout callout-warn mt-2">
+        <span class="callout-title">Three ways this test gets abused</span>
+        <ol class="small mb-0">
+          <li><strong>Peeking.</strong> Checking daily and stopping the moment it goes green massively inflates your false-positive rate. Decide the sample size <em>first</em> (use the planner below), then look once.</li>
+          <li><strong>Running less than a full week.</strong> Tuesday buyers and Sunday buyers are different people. Always run in whole weeks.</li>
+          <li><strong>Testing many things at once.</strong> Test twenty variants at 95% confidence and roughly one will look like a winner purely by chance.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="calc" id="sample-size">
+      <h3>5 · Sample size planner</h3>
+      <p class="calc-intro">Work out how much traffic a test needs <em>before</em> you run it. This is usually the calculator that reveals you don't have enough traffic to test the thing you wanted to test.</p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="ss-baseline">Current conversion rate (%)</label>
+          <input type="number" id="ss-baseline" value="3" min="0.01" max="99" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="ss-mde">Smallest lift worth detecting (%)</label>
+          <input type="number" id="ss-mde" value="10" min="0.1" step="any" inputmode="decimal">
+          <span class="hint">Relative: 10% means 3.0% → 3.3%</span>
+        </div>
+        <div class="field">
+          <label for="ss-confidence">Confidence</label>
+          <select id="ss-confidence">
+            <option value="90">90%</option>
+            <option value="95" selected>95%</option>
+            <option value="99">99%</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ss-power">Statistical power</label>
+          <select id="ss-power">
+            <option value="80" selected>80%</option>
+            <option value="90">90%</option>
+            <option value="95">95%</option>
+          </select>
+          <span class="hint">Chance of spotting a real effect</span>
+        </div>
+        <div class="field">
+          <label for="ss-traffic">Weekly traffic to the test page</label>
+          <input type="number" id="ss-traffic" value="20000" min="0" step="any" inputmode="decimal">
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">Visitors per variant</span><span class="r-value" id="ss-out-per-variant">—</span></div>
+        <div class="result"><span class="r-label">Total visitors</span><span class="r-value" id="ss-out-total">—</span></div>
+        <div class="result"><span class="r-label">Time to run</span><span class="r-value" id="ss-out-days">—</span></div>
+        <div class="verdict" id="ss-verdict"></div>
+      </div>
+
+      <div class="callout mt-2">
+        <span class="callout-title">The uncomfortable implication</span>
+        <p class="mb-0">Required sample grows roughly with the <em>square</em> of how small an effect you want to detect. Halving the detectable lift roughly quadruples the traffic needed. For most small sites this means honest A/B testing of small changes is simply out of reach — and the right response is to make bigger, bolder changes and judge them on reasoning and qualitative evidence, not to run underpowered tests and pretend the results mean something.</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="calc" id="email-value">
+      <h3>6 · Email campaign value</h3>
+      <p class="calc-intro">What a single send is worth, end to end — and the per-recipient figure that tells you whether sending more often is growing the list's value or burning it.</p>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="em-list">List size</label>
+          <input type="number" id="em-list" value="50000" min="0" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="em-delivery">Delivery rate (%)</label>
+          <input type="number" id="em-delivery" value="98.5" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="em-click">Click rate (%)</label>
+          <input type="number" id="em-click" value="2.2" min="0" max="100" step="any" inputmode="decimal">
+          <span class="hint">Of delivered, not of opens</span>
+        </div>
+        <div class="field">
+          <label for="em-cvr">Landing page conversion (%)</label>
+          <input type="number" id="em-cvr" value="8" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="em-aov">Average order value</label>
+          <input type="number" id="em-aov" value="72" min="0" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="em-margin">Gross margin (%)</label>
+          <input type="number" id="em-margin" value="55" min="0" max="100" step="any" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="em-cost">Cost of the send</label>
+          <input type="number" id="em-cost" value="400" min="0" step="any" inputmode="decimal">
+          <span class="hint">Platform costs plus time spent</span>
+        </div>
+      </div>
+
+      <div class="results" aria-live="polite">
+        <div class="result"><span class="r-label">Delivered</span><span class="r-value" id="em-out-delivered">—</span></div>
+        <div class="result"><span class="r-label">Clicks</span><span class="r-value" id="em-out-clicks">—</span></div>
+        <div class="result"><span class="r-label">Orders</span><span class="r-value" id="em-out-orders">—</span></div>
+        <div class="result"><span class="r-label">Revenue</span><span class="r-value" id="em-out-revenue">—</span></div>
+        <div class="result"><span class="r-label">Revenue / recipient</span><span class="r-value" id="em-out-rpr">—</span></div>
+        <div class="result"><span class="r-label">Profit</span><span class="r-value" id="em-out-profit">—</span></div>
+        <div class="verdict" id="em-verdict"></div>
+      </div>
+
+      <h4 class="mt-2">Step by step</h4>
+      <ul class="step-list" id="em-steps"></ul>
+    </section>
+
+    <div class="callout callout-warn">
+      <span class="callout-title">A closing caution on all six</span>
+      <p class="mb-0">Every one of these is a model, and a model is an argument made of assumptions. Their real value is not the number they produce — it's what happens when you change one input and watch the verdict flip. That tells you which assumption your plan actually depends on, which is the thing worth going and checking.</p>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="playbooks.html">Next: playbooks &amp; checklists →</a>
+      <a class="btn btn-ghost" href="metrics.html">See the formulas behind these</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="fundamentals.html">Fundamentals</a></li>
+          <li><a href="channels.html">Channels</a></li>
+          <li><a href="metrics.html">Metrics &amp; formulas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Do</h4>
+        <ul>
+          <li><a href="calculators.html">Calculators</a></li>
+          <li><a href="playbooks.html">Playbooks &amp; checklists</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="calculators.html#unit-economics">LTV:CAC calculator</a></li>
+          <li><a href="calculators.html#ab-test">A/B test significance</a></li>
+          <li><a href="metrics.html#acquisition">CAC &amp; ROAS formulas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0">Marketing Reference · an open, static reference site. Benchmark ranges are directional figures compiled from publicly reported industry data and should be validated against your own analytics before any decision rests on them. Nothing here is financial advice. © <span data-year>2026</span>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/calculators.js" defer></script>
+</body>
+</html>
